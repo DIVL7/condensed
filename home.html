@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whirl Inspector - Landing</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -14,9 +18,20 @@
 
           <!-- Íconos de campana y usuario -->
           <div class="icons">
-            <figure class="fig-campana">
+            <figure class="fig-campana" id="campana">
               <img src="images/campana.png" alt="campana" />
             </figure>
+
+            <!-- Panel de notificaciones oculto -->
+            <div class="notificaciones" id="panelNotificaciones">
+              <h4>Notificaciones</h4>
+              <ul>
+                <li>Curso nuevo disponible</li>
+                <li>Tu progreso se ha actualizado</li>
+                <li>Revisión pendiente</li>
+              </ul>
+            </div>
+
             <a href="perfil.html"
               ><figure class="fig-perfil">
                 <img src="images/perfil.png" alt="perfil" /></figure
@@ -41,7 +56,6 @@
               <a href="curso.html"
                 ><img src="images/reparación.webp" alt="Ilustración 1"
               /></a>
-
               <img src="imagen2.png" alt="Ilustración 2" />
               <img src="imagen3.png" alt="Ilustración 3" />
             </div>
@@ -50,6 +64,23 @@
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const campana = document.getElementById("campana");
+        const panel = document.getElementById("panelNotificaciones");
+
+        campana.addEventListener("click", () => {
+          panel.style.display =
+            panel.style.display === "block" ? "none" : "block";
+        });
+
+        // Ocultar el panel si se hace clic fuera de él
+        document.addEventListener("click", (e) => {
+          if (!campana.contains(e.target) && !panel.contains(e.target)) {
+            panel.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
