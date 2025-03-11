@@ -705,3 +705,283 @@ footer {
   overflow: hidden;
   position: relative;
 }
+
+
+/*Estilos de la parte de home del admin*/
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilos del Header */
+.header {
+  background: orange;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.greeting {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Íconos */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fig-campana,
+.fig-perfil {
+  cursor: pointer;
+}
+
+.fig-campana img,
+.fig-perfil img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Notificaciones */
+.notificaciones {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  padding: 10px;
+}
+
+.notificaciones h4 {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notificaciones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificaciones ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.notificaciones ul li:last-child {
+  border-bottom: none;
+}
+
+/* Secciones */
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Contenedor de Cursos */
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.add-course {
+  order: -1;
+}
+
+.course-item,
+.add-course {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-course:hover,
+.course-item:hover {
+  background: #f8f8f8;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+}
+
+.modal-content button {
+  background: orange;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-content button:hover {
+  background: darkorange;
+}
+
+/*Estilo de staff asignado*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  color: gray;
+}
+
+h4 {
+  font-size: 16px;
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.staff-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.staff-list {
+  width: 48%;
+}
+
+.staff-member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.staff-member:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.staff-info {
+  display: flex;
+  align-items: center;
+}
+
+.staff-member img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.staff-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-role {
+  color: gray;
+  font-size: 14px;
+}
+
+.actions button {
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.actions button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
