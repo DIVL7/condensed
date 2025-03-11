@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Cursos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="greeting"><b>Hola</b>, buenos días</div>
+
+            <div class="icons">
+                <figure class="fig-campana" id="campana">
+                    <img src="images/campana.png" alt="campana" />
+                </figure>
+
+                <div class="notificaciones" id="panelNotificaciones">
+                    <h4>Notificaciones</h4>
+                    <ul>
+                        <li>Curso nuevo disponible</li>
+                        <li>Tu progreso se ha actualizado</li>
+                        <li>Revisión pendiente</li>
+                    </ul>
+                </div>
+
+                <a href="staff_asignado.html">
+                    <figure class="fig-perfil">
+                        <img src="images/perfil.png" alt="perfil" />
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="section" style="display: flex; justify-content: space-between;">
+            <h2>Cursos</h2>
+            <a href="#" style="color: orange; font-weight: bold;">Ver +</a>
+        </div>
+
+        <div class="section course-container">
+            <div class="add-course" onclick="openModal()">
+                <p><strong>Agregar cursos</strong></p>
+                <p>+</p>
+            </div>
+            <div id="courseList" class="course-container"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Crear Curso</h3>
+            <label>Nombre del Curso:</label>
+            <input type="text" id="courseName">
+            <label>Descripción:</label>
+            <textarea id="courseDesc"></textarea>
+            <button onclick="saveCourse()">Guardar</button>
+            <button onclick="closeModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const campana = document.getElementById("campana");
+        const panel = document.getElementById("panelNotificaciones");
+
+        campana.addEventListener("click", () => {
+          panel.style.display =
+            panel.style.display === "block" ? "none" : "block";
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!campana.contains(e.target) && !panel.contains(e.target)) {
+            panel.style.display = "none";
+          }
+        });
+      });
+
+      function openModal() {
+          document.getElementById('modal').style.display = 'block';
+      }
+
+      function closeModal() {
+          document.getElementById('modal').style.display = 'none';
+          document.getElementById('courseName').value = "";
+          document.getElementById('courseDesc').value = "";
+      }
+
+      function saveCourse() {
+          const name = document.getElementById('courseName').value;
+          const desc = document.getElementById('courseDesc').value;
+          if (name.trim() === "" || desc.trim() === "") {
+              alert("Por favor, completa todos los campos");
+              return;
+          }
+          const courseList = document.getElementById('courseList');
+          const courseItem = document.createElement('div');
+          courseItem.className = 'course-item';
+          courseItem.innerHTML = `<strong>${name}</strong><p>${desc}</p>`;
+          courseItem.onclick = function() {
+              alert(`Curso: ${name}\nDescripción: ${desc}`);
+          };
+          courseList.appendChild(courseItem);
+          closeModal();
+      }
+    </script>
+</body>
+</html>
