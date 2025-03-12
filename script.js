@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (validEmployee) {
       console.log("Credenciales válidas, redirigiendo...");
-      window.location.href = "new.html";
+      window.location.href = "home.html";
     } else {
       console.log("Credenciales inválidas");
       errorMessage.textContent = "Número de Empleado o Contraseña incorrectos. Por favor, inténtalo de nuevo.";
